@@ -6,12 +6,7 @@ using namespace std;
 
 class MainClass
 {
-    private:
-        string message;
-    
-    public:
-        void setMessage(string message);
-        string getMessage();
+  
 };
 
 #endif

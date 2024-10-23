@@ -1,21 +1,24 @@
 #include <iostream>
 #include "../headers/main.h"
+#include <memory>
 
 int main() 
 {
-    MainClass mainClass;
-    mainClass.setMessage("Hello, World!");
-    cout << mainClass.getMessage() << endl;
+
+    std::unique_ptr<int> ptr = std::make_unique<int>(42);
+    cout << *ptr << endl;
+    cout << "Memory address: " << ptr.get() << endl;
+    cout << "Memory address: " << &ptr << endl;
+
+
+    int* ptr2 = new int(42);
+    cout << *ptr2 << endl;
+    cout << "Memory address: " << ptr2 << endl;
+    cout << "Memory address: " << &ptr2 << endl;
+    delete ptr2;
+
     return 0;
 }
 
-string MainClass::getMessage() 
-{
-    return message;
-};
 
-void MainClass::setMessage(string message) 
-{
-    this->message = message;
-};
 
