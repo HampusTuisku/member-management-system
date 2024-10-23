@@ -24,11 +24,6 @@ bool Password::isPasswordValid()
 {
     for (char c : *password)
     {
-        if (!isalnum(c))
-        {
-            cout << "Password must contain only letters and numbers" << endl;
-            return false;
-        }
         if (password->length() < 8)
         {
             cout << "Password must be at least 8 characters long" << endl;
