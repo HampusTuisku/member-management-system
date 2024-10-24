@@ -1,31 +1,34 @@
 #include "../../headers/member/member.h"
 
-Member::Member(Username* username, Password* password, Email* email)
+/**
+ * Constructor that initializes the member with a username, password, and email.
+ */
+Member::Member(Username username, Password password, Email email)
+: username(username), password(password), email(email)
 {
-    this->username = username;
-    this->password = password;
-    this->email = email;
 }
 
-Member::~Member()
+/**
+ * Returns the username of the member.
+ */
+Username Member::getUsername() const
 {
-    delete username;
-    delete password;
-    delete email;
+    return username;
 }
 
-Username Member::getUsername()
+/**
+ * Returns the password of the member.
+ */
+Password Member::getPassword() const
 {
-    return *username;
+    return password;
 }
 
-Password Member::getPassword()
+/**
+ * Returns the email of the member.
+ */
+Email Member::getEmail() const
 {
-    return *password;
-}
-
-Email Member::getEmail()
-{
-    return *email;
+    return email;
 }
 

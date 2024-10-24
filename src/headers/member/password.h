@@ -2,21 +2,19 @@
 #define PASSWORD_H
 
 #include <iostream>
-#include <string> 
 
 using namespace std;
 
 class Password
 {
     private:
-        string* password;
+        string password;
 
     public:
-        Password();
-        ~Password();
+        Password(string password);
         void setPassword(string newPassword);
-        string* getPassword();
-        bool isPasswordValid();
+        string getPassword() const;
+        bool isPasswordValid(string password) const;
 };
 
 #endif

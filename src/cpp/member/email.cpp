@@ -1,28 +1,40 @@
 #include "../../headers/member/email.h"
 
+/**
+ * Constructor that initializes the email.
+ */
 Email::Email(string email)
 {
-    if (emailObj->isValidEmail(email) == false) 
+    if (!isValidEmail(email))
     {
-        cout << "Invalid email address" << endl;
+        cout << "Invalid email" << endl;
     }
-    else
+    else 
     {
         this->email = email;
     }
 }
 
-string Email::getEmail()
+/**
+ * Returns the email.
+ */
+string Email::getEmail() const
 {
     return email;
 }
 
-void Email::setEmail(string email)
+/**
+ * Sets the email.
+ */
+void Email::setEmail(string newEmail)
 {
-    this->email = email;
+    this->email = newEmail;
 }
 
-bool Email::isValidEmail(string email)
+/**
+ * Checks if the email is valid.
+ */
+bool Email::isValidEmail(string email) const
 {
     if (email.find('@') != string::npos)
     {

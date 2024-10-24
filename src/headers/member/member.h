@@ -11,15 +11,14 @@ using namespace std;
 class Member
 {
     public:
-        Member(Username* username, Password* password, Email* email);
-        ~Member();
-        Username getUsername();
-        Password getPassword();
-        Email getEmail();
+        Member(Username username, Password password, Email email);
+        Username getUsername() const;
+        Password getPassword() const;
+        Email getEmail() const;
     private:
-        Username* username;
-        Password* password;
-        Email* email;
+        Username username;
+        Password password;
+        Email email;
 };
 
 #endif

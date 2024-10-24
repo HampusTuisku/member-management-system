@@ -1,30 +1,51 @@
 #include "../../headers/member/password.h"
 
-Password::Password()
+/**
+ * Constructor that initializes the password.
+ */
+Password::Password(string password)
 {
-    password = new string;
+    if (!isPasswordValid(password))
+    {
+        cout << "Invalid password" << endl;
+    }
+    else
+    {
+        this->password = password;
+    }
 }
 
-Password::~Password()
-{
-    delete password;
-}
-
+/**
+ * Sets the password.
+ */
 void Password::setPassword(string newPassword)
 {
-    *password = newPassword;
+    password = newPassword;
 }
 
-string* Password::getPassword()
+/**
+ * Returns the password.
+ */
+string Password::getPassword() const
 {
     return password;
 }
 
-bool Password::isPasswordValid()
+/**
+ * Checks if the password is valid.
+ */
+bool Password::isPasswordValid(string password) const
 {
-    for (char c : *password)
+    for (char c : password)
     {
-        if (password->length() < 8)
+        if (c == ' ')
+        {
+            cout << "Password cannot contain spaces" << endl;
+            return false;
+        }
+    }
+    {
+        if (password.length() < 8)
         {
             cout << "Password must be at least 8 characters long" << endl;
             return false;

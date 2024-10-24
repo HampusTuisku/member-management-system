@@ -1,35 +1,49 @@
 #include "../../headers/member/username.h"
 
-Username::Username()
+/**
+ * Constructor that initializes the username.
+ */
+Username::Username(string username)
 {
-    username = new string;
+    if (!isUsernameValid(username))
+    {
+        cout << "Invalid username" << endl;
+    }
+    else
+    {
+        this->username = username;
+    }
 }
 
-Username::~Username()
-{
-    delete username;
-}
-
+/**
+ * Sets the username.
+ */
 void Username::setUsername(string newUsername)
 {
-    *username = newUsername;
+    this->username = newUsername;
 }
 
-string* Username::getUsername()
+/**
+ * Returns the username.
+ */
+string Username::getUsername() const
 {
     return username;
 }
 
-bool Username::isUsernameValid()
+/**
+ * Checks if the username is valid.
+ */
+bool Username::isUsernameValid(string username) const
 {
-    for (char c : *username)
+    for (char c : username)
     {
         if (!isalnum(c))
         {
             cout << "Username must contain only letters and numbers" << endl;
             return false;
         }
-        if (username->length() > 12)
+        if (username.length() > 12)
         {
             cout << "Username must not be longer than 12 characters long" << endl;
             return false;

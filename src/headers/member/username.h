@@ -9,13 +9,12 @@ using namespace std;
 class Username
 {
     private:
-        string* username;
+        string username;
     public:
-        Username();
-        ~Username();
+        Username(string username);
         void setUsername(string newUsername);
-        string* getUsername();
-        bool isUsernameValid();
+        string getUsername() const;
+        bool isUsernameValid(string username) const;
 };
 
 #endif

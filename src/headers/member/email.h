@@ -9,13 +9,12 @@ class Email
 {
     private:
         string email;
-        Email *emailObj;
         
     public:
         Email(string email);
-        string getEmail();
-        void setEmail(string email);
-        bool isValidEmail(string email);
+        string getEmail() const;
+        void setEmail(string newEmail);
+        bool isValidEmail(string email) const;
 };
 
 #endif
