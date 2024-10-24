@@ -7,7 +7,7 @@ CXX = g++
 CXXFLAGS = -std=c++11
 
 # Source files
-SRCS = src/cpp/main.cpp
+SRCS =  src/cpp/main.cpp src/cpp/member/member.cpp src/cpp/view/ui.cpp src/cpp/member/username.cpp src/cpp/member/password.cpp src/cpp/member/email.cpp
 
 # Output binary
 TARGET = main
